@@ -1,0 +1,17 @@
+name: vint
+on: [push, pull_request]
+jobs:
+  vint:
+    name: vim lint
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+    steps:
+      - name: checkout
+        uses: actions/checkout@master
+      - name: reviewdog/action-vint
+        uses: reviewdog/action-vint@master
+        with:
+          github_token: ${{ secrets.github_token }}
+        env:
+          DEFAULT_BRANCH: master
