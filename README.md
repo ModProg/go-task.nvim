@@ -1,7 +1,7 @@
 vim-task
 ========
 
-run tasks from vim via [go-task](https://taskfile.dev/#/).
+taskfile highlighting and run tasks from vim via [go-task](https://taskfile.dev/#/).
 
 ## installation
 
