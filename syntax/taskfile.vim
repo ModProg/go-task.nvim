@@ -5,11 +5,12 @@
 
 runtime! syntax/yaml.vim
 
-syn region          tfExpansion             start='{{' end='}}' contained containedin=yamlFlowString matchgroup=Special
+syn region          tfExpansion             matchgroup=Special start='{{' end='}}' contained containedin=yamlFlowString
 
 syn keyword         Conditional             if else end contained containedin=tfExpansion
-syn keyword         Operator                and not or eq ne lt le gt ge contained containedin=tfExpansion
-syn match           Special                 "\.[A-Za-z_]*" contained containedin=tfExpansion
+syn match           Operator                "\." contained containedin=tfExpansion
+syn region          tfString                start=+"+ skip=+\\\\\|\\"+ end=+"+ contained containedin=tfExpansion
+syn keyword         tfComparisonFunction    and not or eq ne lt le gt ge contained containedin=tfExpansion
 syn keyword         tfStringFunction        trim trimAll trimSuffix trimPrefix upper lower title repeat substr trunc "contains" hasPrefix hasSuffix quote squote cat indent nindent replace plural regexMatch mustRegexMatch regexFindAll mustRegexFindAll regexFind mustRegexFind regexReplaceAll mustRegexReplaceAll regexReplaceAllLiteral mustRegexReplaceAllLiteral regexSplit mustRegexSplit regexQuoteMeta contained containedin=tfExpansion
 syn keyword         tfStringSliceFunction   join splitList split splitn sortAlpha contained containedin=tfExpansion
 syn keyword         tfIntegerMathFunction   add add1 sub div mod mul max min floor ceil round randInt contained containedin=tfExpansion
@@ -27,6 +28,7 @@ syn keyword         tfReflectionFunction    kindOf kindIs typeOf typeIs typeIsLi
 syn keyword         tfCryptFunction         sha1sum sha256sum adler32sum contained containedin=tfExpansion
 syn keyword         tfTaskfileFunction      OS ARCH splitLines catLines toSlash fromSlash exeExt shellQuote contained containedin=tfExpansion
 
+hi default link     tfComparisonFunction    Function
 hi default link     tfStringFunction        Function
 hi default link     tfStringSliceFunction   Function
 hi default link     tfIntegerMathFunction   Function
@@ -43,3 +45,4 @@ hi default link     tfOsFunction            Function
 hi default link     tfReflectionFunction    Function
 hi default link     tfCryptFunction         Function
 hi default link     tfTaskfileFunction      Function
+hi default link     tfString                String
