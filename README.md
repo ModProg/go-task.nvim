@@ -27,4 +27,4 @@ nnoremap <silent><Leader>t :execute 'TaskDefault'<CR>
 ## acknowledgements
 
 * [the go-task contributors and maintainers.](https://github.com/go-task/task/graphs/contributors)
-* [steve losh's](https://stevelosh.com/) book, [learn vimscript the hard way](https://learnvimscriptthehardway.stevelosh.com/), was a great and useful read.
+* [ratmav](https://github.com/ratmav/vim-task) for writing the initial version
