@@ -8,7 +8,7 @@ function! task#run#Check() abort
         echo 'vim-task: go-task is not installed.'
         return 0
     endif
-    if !glob('{Taskfile,Taskfile.dist}.{yml,yaml}')
+    if !filereadable(glob("{Taskfile,Taskfile.dist}.{yaml,yml}"))
         echo 'vim-task: taskfile not found'
         return 0
     endif
