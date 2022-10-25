@@ -8,7 +8,7 @@ runtime! syntax/yaml.vim
 syn region          tfExpansion             matchgroup=Special start='{{' end='}}' contained containedin=yamlFlowString
 
 syn keyword         Conditional             if else end contained containedin=tfExpansion
-syn match           Operator                "\." contained containedin=tfExpansion
+syn match           Operator                "\.\||" contained containedin=tfExpansion
 syn region          tfString                start=+"+ skip=+\\\\\|\\"+ end=+"+ contained containedin=tfExpansion
 syn keyword         tfComparisonFunction    and not or eq ne lt le gt ge contained containedin=tfExpansion
 syn keyword         tfStringFunction        trim trimAll trimSuffix trimPrefix upper lower title repeat substr trunc "contains" hasPrefix hasSuffix quote squote cat indent nindent replace plural regexMatch mustRegexMatch regexFindAll mustRegexFindAll regexFind mustRegexFind regexReplaceAll mustRegexReplaceAll regexReplaceAllLiteral mustRegexReplaceAllLiteral regexSplit mustRegexSplit regexQuoteMeta contained containedin=tfExpansion
