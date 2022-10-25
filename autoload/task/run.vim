@@ -1,18 +1,18 @@
 " task#run#Check {{{
 function! task#run#Check() abort
-    let executable = 'task'
     if executable('task')
         let executable = 'task'
     elseif executable('go-task')
         let executable = 'go-task'
     else
         echo 'vim-task: go-task is not installed.'
-        return false
+        return 0
     endif
     if !filereadable('Taskfile.yml')
         echo 'vim-task: taskfile not found'
-        return false
+        return 0
     endif
+    return executable
 endfunction
 " }}}
 
