@@ -5,8 +5,7 @@
 
 runtime! syntax/yaml.vim
 
-syn region          tfExpansion             start='{{' end='}}' contained containedin=yamlFlowString display
-hi  default link    tfExpansion             Define
+syn region          tfExpansion             start='{{' end='}}' contained containedin=yamlFlowString matchgroup=tfExpansionDelimiter
 
 syn keyword         Conditional             if else end contained containedin=tfExpansion
 syn keyword         Operator                and not or eq ne lt le gt ge contained containedin=tfExpansion
@@ -27,3 +26,21 @@ syn keyword         tfOsFunction            env expandenv contained containedin=
 syn keyword         tfReflectionFunction    kindOf kindIs typeOf typeIs typeIsLike deepEqual contained containedin=tfExpansion
 syn keyword         tfCryptFunction         sha1sum sha256sum adler32sum contained containedin=tfExpansion
 syn keyword         tfTaskfileFunction      OS ARCH splitLines catLines toSlash fromSlash exeExt shellQuote contained containedin=tfExpansion
+
+hi  default link    tfExpansionDelimiter    Define
+hi default link     tfStringFunction        Function
+hi default link     tfStringSliceFunction   Function
+hi default link     tfIntegerMathFunction   Function
+hi default link     tfIntegerSliceFunction  Function
+hi default link     tfDateFunction          Function
+hi default link     tfDefaultFunction       Function
+hi default link     tfEncodingFunction      Function
+hi default link     tfListFunction          Function
+hi default link     tfDictFunction          Function
+hi default link     tfConversionFunction    Function
+hi default link     tfPathFunction          Function
+hi default link     tfFlowControlFunction   Function
+hi default link     tfOsFunction            Function
+hi default link     tfReflectionFunction    Function
+hi default link     tfCryptFunction         Function
+hi default link     tfTaskfileFunction      Function
