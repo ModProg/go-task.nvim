@@ -1,25 +1,26 @@
 " task#run#Check {{{
 function! task#run#Check() abort
-  let check = 0
-  if executable('task')
-    if filereadable('Taskfile.yml')
-      let check = 1
+    let executable = 'task'
+    if executable('task')
+        let executable = 'task'
+    elseif executable('go-task')
+        let executable = 'go-task'
     else
-      echo 'vim-task: taskfile not found'
+        echo 'vim-task: go-task is not installed.'
+        return false
     endif
-  else
-    echo 'vim-task: go-task is not installed.'
-  endif
-
-  return check
+    if !filereadable('Taskfile.yml')
+        echo 'vim-task: taskfile not found'
+        return false
+    endif
 endfunction
 " }}}
 
 " task#run#Default {{{
 function! task#run#Default() abort
-  let check = task#run#Check()
-  if check
-    execute ':! task'
+  let executable = task#run#Check()
+  if executable
+    execute ':! ' . executable
   endif
 endfunction
 "}}}
@@ -30,9 +31,9 @@ function! task#run#Ask() abort
   let task = input("vim-task to run: ", "", "file")
   call inputrestore()
 
-  let check = task#run#Check()
-  if check
-    execute ':! task '. task
+  let executable = task#run#Check()
+  if executable
+    execute ':! ' . executable . ' ' . task
   endif
 endfunction
 " }}}
