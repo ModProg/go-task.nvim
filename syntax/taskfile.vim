@@ -10,8 +10,8 @@ hi  default link    tfExpansion             Define
 
 syn keyword         Conditional             if else end contained containedin=tfExpansion
 syn keyword         Operator                and not or eq ne lt le gt ge contained containedin=tfExpansion
-syn match           Special                 "\.[A-Za-z_]" contained containedin=tfExpansion
-syn keyword         tfStringFunction        trim trimAll trimSuffix trimPrefix upper lower title repeat substr trunc contains hasPrefix hasSuffix quote squote cat indent nindent replace plural regexMatch mustRegexMatch regexFindAll mustRegexFindAll regexFind mustRegexFind regexReplaceAll mustRegexReplaceAll regexReplaceAllLiteral mustRegexReplaceAllLiteral regexSplit mustRegexSplit regexQuoteMeta contained containedin=tfExpansion
+syn match           Special                 "\.[A-Za-z_]*" contained containedin=tfExpansion
+syn keyword         tfStringFunction        trim trimAll trimSuffix trimPrefix upper lower title repeat substr trunc "contains" hasPrefix hasSuffix quote squote cat indent nindent replace plural regexMatch mustRegexMatch regexFindAll mustRegexFindAll regexFind mustRegexFind regexReplaceAll mustRegexReplaceAll regexReplaceAllLiteral mustRegexReplaceAllLiteral regexSplit mustRegexSplit regexQuoteMeta contained containedin=tfExpansion
 syn keyword         tfStringSliceFunction   join splitList split splitn sortAlpha contained containedin=tfExpansion
 syn keyword         tfIntegerMathFunction   add add1 sub div mod mul max min floor ceil round randInt contained containedin=tfExpansion
 syn keyword         tfIntegerSliceFunction  until untilStep seq contained containedin=tfExpansion
