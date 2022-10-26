@@ -8,7 +8,8 @@ runtime! syntax/yaml.vim
 syn region          tfExpansion             matchgroup=Special start='{{' end='}}' contained containedin=yamlFlowString
 
 syn keyword         Conditional             if else end contained containedin=tfExpansion
-syn match           Operator                "\.\||" contained containedin=tfExpansion
+syn match           Operator                "\.\||" contained containedin=tfExpansion nextgroup=tfGlobal
+syn keyword         tfGlobal                CLI_ARGS TASK ROOT_DIR TASKFILE_DIR CHECKSUM TIMESTAMP
 syn match           Normal                  "[^[:space:](]\." contained containedin=tfExpansion
 syn region          tfString                start=+"+ skip=+\\\\\|\\"+ end=+"+ contained containedin=tfExpansion
 syn keyword         tfComparisonFunction    and not or eq ne lt le gt ge contained containedin=tfExpansion
@@ -47,3 +48,4 @@ hi default link     tfReflectionFunction    Function
 hi default link     tfCryptFunction         Function
 hi default link     tfTaskfileFunction      Function
 hi default link     tfString                String
+hi default link     tfGlobal                Constant
