@@ -27,4 +27,4 @@ nnoremap <silent><Leader>t :execute 'TaskDefault'<CR>
 ## acknowledgements
 
 * [the go-task contributors and maintainers.](https://github.com/go-task/task/graphs/contributors)
-* [ratmav](https://github.com/ratmav/vim-task) for writing the initial version
+* [ratmav](https://github.com/ratmav/vim-task) for writing the initial version (the task run commands)
